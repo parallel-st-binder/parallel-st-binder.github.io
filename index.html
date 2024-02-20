@@ -48,7 +48,7 @@
 </head>
 
 <body>
-    <div class="jumbotron jumbotron-fluid" style='background-color: #E3F4F4; padding-bottom: 0;'>
+    <div class="jumbotron jumbotron-fluid" style='background-color: #B0E0E6; padding-bottom: 0;'>
         <div class="container" align="center" style="padding-bottom: 4rem;">
         <div class="paper-title">
             <h1>Parallelized Spatiotemporal Binding</h1>
@@ -65,7 +65,8 @@
             </p>
         </div>
         <h5>
-            <a class="btn btn-primary" href="#">ArXiv</a>&nbsp; <a class="btn btn-primary" href="#">Code</a>&nbsp;
+            <a class="btn btn-primary" href="#">ArXiv</a>
+<!--            &nbsp; <a class="btn btn-primary" href="#">Code</a>&nbsp;-->
         </h5>
         </div>
     </div>
@@ -85,10 +86,56 @@
     <br>
     <!-- Figure 1 -->
     <div class="container" align="center">
-        <img src="figure_one.png" alt="Figure 1" style="max-width: 100%; height: auto;">
+        <img src="images/figure_one.png" alt="Figure 1" style="max-width: 100%; height: auto;">
         <br>
         <br>
         <p><i>Figure 1: <strong>Conventional Spatiotemporal Binding versus Ours.</strong> <u><i>Left:</i></u> Conventional object-centric encoders summarize sequential sensory inputs into slots via recurrence, analogous to RNNs. <u><i>Right:</i></u> On the other hand, our proposed object-centric encoder achieves this without recurrence, allowing it to be parallelized over the sequence length, similarly to transformers.</i></p>
+        <hr />
+    </div>
+    <br>
+    <!-- Figure 2 -->
+    <div class="container" align="center">
+        <div align="center">
+            <h2>Computational Benefits</h2>
+        </div>
+        <br>
+        <div align="center">
+            <h4>Benefit 1: Stable Training with Longer Sequences</h4>
+        </div>
+        <img src="instability.png" alt="Figure 2" style="max-width: 88%; height: auto;">
+        <br>
+        <p><i>Figure 2: We compare our proposed encoder with the baseline model SAVi, a recurrent object-centric encoder that is also the current state-of-the-art for learning slots from sequential inputs. We show validation loss curves (mean and standard deviation computed over 5 seeds) for training runs on MOVi-A and MOVi-B following the unsupervised training regime of <a href="https://arxiv.org/abs/2111.12594"> Kipf et al. 2021</a>. Here, $T_\text{train}$ denotes the length of each training episode. We note that as we increase the episode length from 6 to 12, SAVi becomes highly unstable while our model trains smoothly.</i></p>
+        <br><br>
+        <div align="center">
+            <h4>Benefit 2: Faster Training Speed</h4>
+        </div>
+        <img src="latency.png" alt="Figure 3" style="max-width: 88%; height: auto;">
+        <br>
+        <p><i>Figure 3: We report the time taken (in seconds) to perform one training step plotted as a function of the episode length. For our proposed encoder, we observe a speed-up of about 1.6$\times$ over the baseline SAVi.</i></p>
+        <hr />
+    </div>
+    <br>
+    <br>
+    <!-- Figure 4 -->
+    <div class="container" align="center">
+        <div align="center">
+            <h2>Application 1: Unsupervised Object-Centric Learning on <b>2D Videos</b> with Alpha-Mixture Decoder</h2>
+        </div>
+        <br>
+        <div align="center">
+            <h3>Improved Quantitative Performance</h3>
+        </div>
+        <img src="movi_ab_performance.png" alt="Figure 4" style="max-width: 88%; height: auto;">
+        <br>
+        <p><i>Figure 4: <strong>Unsupervised Object-Centric Learning on MOVi-A and MOVi-B using Spatial Broadcast Decoder.</strong> We compare our proposed encoder with the recurrence-based baseline encoder SAVi (<a href="https://arxiv.org/abs/2111.12594">Kipf et al. 2021</a>). <em>Left:</em> Video-level FG-ARI score $(\uparrow)$. <em>Right:</em> Reconstruction PSNR $(\uparrow)$. </i></p>
+        <br>
+        <div align="center">
+            <h3>Qualitative Performance</h3>
+            <h5>MOVi-A</h5>
+            <img src="movi-a-001.gif" alt="Figure 5" style="max-width: 30%; height: auto;"> &nbsp; <img src="movi-a-002.gif" alt="Figure 5" style="max-width: 30%; height: auto;">
+        </div>
+
+        <hr />
     </div>
 </body>
 
