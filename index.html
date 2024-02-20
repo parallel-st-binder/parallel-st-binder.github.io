@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A parallelized architecture for learning slot representations from sequential inputs." />
+    <meta name="keywords" content="Spatiotemporal Binding, Parallelization, Object-centric Learning" />
+    <meta name="author" content="Gautam Singh, Yue Wang, Jiawei Yang, Boris Ivanovic, Sungjin Ahn, Marco Pavone, Tong Che" />
+    <title>PSB</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="bootstrap.min.css" rel="stylesheet"-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <style>
+        .paper-title h1 {
+            font-size: 36px; /* Increase title font size */
+            margin-bottom: 20px; /* Add some space below the title */
+        }
+        .authors-list .name {
+            font-size: 20px; /* Adjust author name font size for better readability */
+            margin-bottom: 5px; /* Add some space below the author list */
+        }
+        .authors-list .name a {
+            margin-right: 10px; /* Add spacing between individual author names */
+        }
+        .affiliation {
+            font-size: 16px; /* Slightly smaller font size for affiliations */
+            margin-top: 5px; /* Add some space above the affiliations */
+        }
+        .equal-advising {
+            font-size: 14px; /* Smaller font size for the equal advising key */
+            margin-top: 10px; /* Separate it from affiliations */
+        }
+    </style>
+
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+              tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+              }
+            });
+        </script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body>
+    <div class="jumbotron jumbotron-fluid" style='background-color: #E3F4F4; padding-bottom: 0;'>
+        <div class="container" align="center" style="padding-bottom: 4rem;">
+        <div class="paper-title">
+            <h1>Parallelized Spatiotemporal Binding</h1>
+        </div>
+        <div class="authors-list">
+            <p class="name text-center">
+                <a target="_blank">Gautam Singh<sup>1</sup></a>, <a target="_blank">Yue Wang<sup>2,3</sup></a>, <a target="_blank">Jiawei Yang<sup>3</sup></a>, <a target="_blank">Boris Ivanovic<sup>2</sup></a>, <a target="_blank">Sungjin Ahn<sup>†, 4</sup></a>, <a target="_blank">Marco Pavone<sup>†,2,5</sup></a>, <a target="_blank">Tong Che<sup>2</sup></a>
+            </p>
+            <p class="affiliation text-center">
+                <sup>1</sup>Rutgers University, <sup>2</sup>NVIDIA Research, <sup>3</sup>University of Southern California, <sup>4</sup>KAIST, <sup>5</sup>Stanford University
+            </p>
+            <p class="equal-advising text-center">
+                <sup>†</sup>Equal Advising
+            </p>
+        </div>
+        <h5>
+            <a class="btn btn-primary" href="#">ArXiv</a>&nbsp; <a class="btn btn-primary" href="#">Code</a>&nbsp;
+        </h5>
+        </div>
+    </div>
+    <!--------------------- Abstract --------------------->
+    <br />
+    <div class="container">
+        <div align="center">
+            <h2>Abstract</h2>
+        </div>
+            <hr />
+            <p align="justify">
+                While modern best practices advocate for scalable architectures that support long-range interactions, object-centric models are yet to fully embrace these architectures. In particular, existing object-centric models for handling sequential inputs, due to their reliance on RNN-based implementation, show poor stability and capacity and are slow to train on long sequences. We introduce <i>Parallelizable Spatiotemporal Binder</i> or <i>PSB</i>, the first temporally-parallelizable slot learning architecture for sequential inputs. Unlike conventional RNN-based approaches, PSB produces object-centric representations, known as slots, for all time-steps <i>in parallel</i>. This is achieved by refining the initial slots across all time-steps through a fixed number of layers equipped with causal attention. By capitalizing on the parallelism induced by our architecture, the proposed model exhibits a significant boost in efficiency. In experiments, we test PSB extensively as an encoder within an auto-encoding framework paired with a wide variety of decoder options. Compared to the state-of-the-art, our architecture demonstrates stable training on longer sequences, achieves parallelization that results in a 60% increase in training speed, and yields performance that is on par with or better on unsupervised 2D and 3D object-centric scene decomposition and understanding.
+            </p>
+    </div>
+</body>
+
+</html>
