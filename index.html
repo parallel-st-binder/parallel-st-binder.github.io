@@ -79,6 +79,16 @@
             <p align="justify">
                 While modern best practices advocate for scalable architectures that support long-range interactions, object-centric models are yet to fully embrace these architectures. In particular, existing object-centric models for handling sequential inputs, due to their reliance on RNN-based implementation, show poor stability and capacity and are slow to train on long sequences. We introduce <i>Parallelizable Spatiotemporal Binder</i> or <i>PSB</i>, the first temporally-parallelizable slot learning architecture for sequential inputs. Unlike conventional RNN-based approaches, PSB produces object-centric representations, known as slots, for all time-steps <i>in parallel</i>. This is achieved by refining the initial slots across all time-steps through a fixed number of layers equipped with causal attention. By capitalizing on the parallelism induced by our architecture, the proposed model exhibits a significant boost in efficiency. In experiments, we test PSB extensively as an encoder within an auto-encoding framework paired with a wide variety of decoder options. Compared to the state-of-the-art, our architecture demonstrates stable training on longer sequences, achieves parallelization that results in a 60% increase in training speed, and yields performance that is on par with or better on unsupervised 2D and 3D object-centric scene decomposition and understanding.
             </p>
+            <hr />
+    </div>
+
+    <br>
+    <!-- Figure 1 -->
+    <div class="container" align="center">
+        <img src="figure_one.png" alt="Figure 1" style="max-width: 100%; height: auto;">
+        <br>
+        <br>
+        <p><i>Figure 1: <strong>Conventional Spatiotemporal Binding versus Ours.</strong> <u><i>Left:</i></u> Conventional object-centric encoders summarize sequential sensory inputs into slots via recurrence, analogous to RNNs. <u><i>Right:</i></u> On the other hand, our proposed object-centric encoder achieves this without recurrence, allowing it to be parallelized over the sequence length, similarly to transformers.</i></p>
     </div>
 </body>
 
